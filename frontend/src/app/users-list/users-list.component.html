@@ -1,0 +1,22 @@
+<ul>
+    <li *ngFor="let user of $users | async">
+        {{ user.name }} ({{ user.role }})
+        <span *ngIf="role === 'admin'" (click)="this.editing = user">EDIT</span>
+    </li>
+</ul>
+
+<div *ngIf="editing">
+    <p>Editing user: {{ editing.id }}</p>
+    <form>
+        <p>
+            <input name="name" type="text" [(ngModel)]="editing.name">
+        </p>
+        <p>
+            <select name="role" [(ngModel)]="editing.role">
+                <option value="admin">ADMIN</option>
+                <option value="user">USER</option>
+            </select>
+        </p>
+        <button (click)="save(editing)">SAVE</button>
+    </form>
+</div>

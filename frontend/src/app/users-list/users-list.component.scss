@@ -1,0 +1,19 @@
+ul {
+    list-style-type: none;
+    li {
+        background: #ddd;
+        padding: 4px;
+        margin-bottom: 5px;
+        width: 40%;
+        position: relative;
+        span {
+            display: block;
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            background: #666;
+            color: white;
+            padding: 2px 4px;
+        }
+    }
+}
